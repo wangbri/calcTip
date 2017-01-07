@@ -1,7 +1,3 @@
-<?php
-setcookie("firstVisit", 0, time() + 86400, "/");
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -61,7 +57,7 @@ div.h1 {
 
 div.bill {
  <?php
- if (!checkBill() && isset($_COOKIE['firstVisit'])) {
+ if (!checkBill() && $_SERVER['REQUEST_METHOD'] == 'POST') {
  ?>
  color: red;
  <?php
@@ -73,7 +69,7 @@ div.bill {
 
 div.tip {
  <?php
- if (!checkTip() && isset($_COOKIE['firstVisit'])) {
+ if (!checkTip() && $_SERVER['REQUEST_METHOD'] == 'POST') {
  ?>
   color: red;
  <?php
@@ -105,24 +101,36 @@ div.result {
 
  <div class="tip">
   <label for="tip">Tip percentage:</label><br>
-  <input type="hidden" name="tip" value="0">
   <?php
   for ($i = 10; $i <= 20; $i+= 5) {
   ?> 
-   <input type="radio" name="tip" value="<?php echo $i; ?>"><?php echo $i; ?>%
+   <input type="radio" name="tip" value="<?php echo $i; ?>"
+  <?php
+  if ($i == 15) {
+  ?>
+   checked="checked">
+  <?php 
+  } else {
+  ?>
+   >
+  <?php
+  }
+  ?> 
+
+  <?php echo $i; ?>%
   <?php
   }
   ?>
 
-  <input type = 'submit' value = 'Submit' >
+  <input type='submit' value='Submit'>
  </div>
 
 <?php 
-if (checkBill() && checkTip() && isset($_COOKIE['firstVisit'])) {
+if (checkBill() && checkTip() && $_SERVER['REQUEST_METHOD'] == 'POST') {
  $total = $billamt + ($tipamt/100 * $billamt);
 ?>
  <div class="result">
-  <label for="tipamt"> Tip:</label> $<?php echo $tipamt ?>.00<br>
+  <label for="tipamt"> Tip:</label> $<?php echo number_format($tipamt/100 * $billamt, 2); ?><br>
   <label for="total"> Total:</label> $<?php echo number_format($total, 2); ?><br>
  </div>
 <?php
