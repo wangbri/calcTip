@@ -11,8 +11,8 @@ function checkBill()
  global $billamt; 
 
  if (isset($_POST['bill'])) {
-  $billamt = $_POST['bill'];
   if ($billamt > 0 && is_numeric($billamt)) {
+   $billamt = $_POST['bill'];
    return true;
   } 
  }
