@@ -4,7 +4,7 @@
 
 Submitted by: **Brian Wang**
 
-Time spent: **3** hours spent in total
+Time spent: **3.5** hours spent in total
 
 ## User Stories
 
@@ -28,9 +28,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/a/PrZ9I' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/a/aTcsK' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Couldn't get gif to embed in the README. Link is http://imgur.com/a/yEYZP.
+Couldn't get gif to embed in the README. Link is http://imgur.com/a/aTcsK.
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
