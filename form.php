@@ -11,13 +11,17 @@ function checkBill()
  global $billamt; 
 
  if (isset($_POST['bill'])) {
-  if ($billamt > 0 && is_numeric($billamt)) {
+  if (is_numeric($_POST['bill']) && $_POST['bill'] < 0) {
+   $billamt = $_POST['bill'];
+   return false;
+  } else if (!is_numeric($_POST['bill'])) {
+   $billamt = 0;
+   return false;
+  } else {
    $billamt = $_POST['bill'];
    return true;
-  } 
+  }
  }
- 
- return false;
 }
 
 function checkTip()
