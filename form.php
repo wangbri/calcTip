@@ -17,7 +17,7 @@ function checkBill()
   } else if (!is_numeric($_POST['bill'])) {
    $billamt = 0;
    return false;
-  } else {
+  } else if ($_POST['bill'] > 0) {
    $billamt = $_POST['bill'];
    return true;
   }
