@@ -30,6 +30,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://imgur.com/a/yEYZP' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Couldn't get gif to embed in the README. Link is http://imgur.com/a/yEYZP.
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
