@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <?php
 $billamt = 0;
 $tipamt = 0;
@@ -60,6 +59,7 @@ div.bill {
  if (!checkBill() && $_SERVER['REQUEST_METHOD'] == 'POST') {
  ?>
  color: red;
+ font-weight: bold;
  <?php
  }
  ?>
@@ -72,6 +72,7 @@ div.tip {
  if (!checkTip() && $_SERVER['REQUEST_METHOD'] == 'POST') {
  ?>
   color: red;
+  font-weight: bold;
  <?php
  }
  ?>
@@ -96,7 +97,7 @@ div.result {
 
  <div class="bill">
   <label for="bill">Bill subtotal: $</label>
-  <input type="text" id="bill" name="bill" value="0" />
+  <input type="text" id="bill" name="bill" value="<?php echo $billamt ?>">
  </div>
 
  <div class="tip">
@@ -106,7 +107,7 @@ div.result {
   ?> 
    <input type="radio" name="tip" value="<?php echo $i; ?>"
   <?php
-  if ($i == 15) {
+  if (($i == 15 && $_SERVER['REQUEST_METHOD'] != 'POST') || ($i == $tipamt)) {
   ?>
    checked="checked">
   <?php 
